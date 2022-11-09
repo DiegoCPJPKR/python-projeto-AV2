@@ -1,107 +1,50 @@
 NOME: DIEGO DE CASTRO PIMENTEL
 MATRÍCULA: 202203252496
 
-Lista I:
+-------------ATIVIDADE – 5,0 NA AV2-------------
+1)
+BMa = int(input('Escreva a base maior: \n'))
+BMe = int(input('Escreva a base menor: \n'))
+Alt = int(input('Escreva a altura: \n'))
 
-2. João Papo-de-Pescador, homem de bem, comprou um microcomputador
-para controlar o rendimento diário de seu trabalho. Toda vez que ele traz um
-peso de peixes maior que o estabelecido pelo regulamento de pesca do estado
-de São Paulo (50 quilos) deve pagar uma multa de R$ 4,00 por quilo
-excedente. João precisa que você faça um programa que leia a variável peso
-(peso de peixes) e calcule o excesso. Gravar na variável excesso a quantidade
-de quilos além do limite e na variável multa o valor da multa que João deverá
-pagar. Imprima os dados do programa com as mensagens adequadas.
-# t = tamanho, l = litros, p = preço, lat = latas
-t = int(input('Declare em metros quadrados o tamanho: '))
+Area = (BMa + BMe) * Alt / 2
 
-CODIGO:
+print(f'Resultado= {Area}')
 
-l = t / 3
+-------------
+2) 
+def somaImposto(taxaImposto, custo):
+    #cálculo do imposto.
+    resultado_imposto = custo + (custo * taxaImposto / 100)
+    #retorno do resultado do imposto
+    return resultado_imposto
 
-if t % 54 == 0:
- lat = t / 54
-else:
- lat = int(t / 54) + 1
+somaImposto(10, 45.00)
+-------------
+3) 
+Mh = "A.M."
+Td = "P.M."
 
-p = lat * 80
-print ('%d lat' %lat)
-print ('R$ %.2f' %p) 
+def conversao(hora, minuto):
+    if 0 <= hora <= 12 and 0 <= minuto < 60:
+        return f"{hora}:{minuto} {Mh}"
+    elif 12 < hora < 24 and 0 <= minuto < 60:
+        return f"{hora - 12}:{minuto} {Td}"
 
--------------------------------------------------------------------------------------
+def saida(hora, minuto):
+    if hora > 23 or hora < 0:
+        print("Hora inválida!")
+    elif minuto > 59 or minuto < 0:
+        print("Hora inválida!")
+    else:
+        print(f"{conversao(hora, minuto)}")
 
-4. Faça um programa para uma loja de tintas. O programa deverá pedir o
-tamanho em metros quadrados da área a ser pintada. Considere que a
-cobertura da tinta é de 1 litro para cada 3 metros quadrados e que a tinta é
-vendida em latas de 18 litros, que custam R$ 80,00. Informe ao usuário a
-quantidades de latas de tinta a serem compradas e o preço total.
+n = 1
+while n != 0:
+    hora = int(input("Hora: "))
+    if hora < 0:
+        break
 
-CÓDIGO:
+    minuto = int(input("Minuto: "))
 
-tamanho = int(input('Tamanho em metros quadrados: '))
-litros = tamanho / 3
-if tamanho % 54 == 0:
- latas = tamanho / 54
-else:
- latas = int(tamanho / 54) + 1
-
-preco = latas * 80
-print ('%d latas' %latas)
-print ('R$ %.2f' %preco)
-
--------------------------------------------------------------------------------------
-
-6. Faça um programa que peça o tamanho de um arquivo para download (em
-MB) e a velocidade de um link de Internet (em Mbps), calcule e informe o
-tempo aproximado de download do arquivo usando este link (em minutos)
-
-CÓDIGO
-
-tamanho = float(input('Tamanho do arquivo (MB): '))
-velocidade = float(input('Velocidade de Internet (MBps): '))
-print('Tempo aproximado de download: %.0f Minutos ' %((tamanho / velocidade) * 60))
-
--------------------------------------------------------------------------------------
-
-Lista II:
-
-
-2. Faça um Programa que peça um número inteiro e determine se ele é par ou
-ímpar
-numero = int(input('Escreva um número inteiro: '))
-
-CÓDIGO:
-
-if numero%2 :
- print("Ímpar")
-else:
- print("Par")
-
--------------------------------------------------------------------------------------
-
-
-3. Faça um Programa que peça um número e informe se o número é inteiro ou
-decimal.
-
-CÓDIGO
-
-Numero = float(input("Escreva um numero: "))
-
-if (Numero // 1 == Numero):
- print('Numero inteiro.')
-
-else:
- print('Numero decimal.')
-
--------------------------------------------------------------------------------------
-
-5. Faça um Programa que leia uma estrutura A com 10 números inteiros, calcule e mostre a soma
-dos quadrados dos elementos desta estrutura
-
-CÓDIGO
-
-soma = 0
-
-for A in range(10):
-
-   soma += int(input(f"Escrava o {A+1} numero inteiro: ")) ** 2
-print(f"A soma dos quadrados dos numeros digitados eh {soma}")
+    saida(hora, minuto)
