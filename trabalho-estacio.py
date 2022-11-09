@@ -1,7 +1,7 @@
-NOME: DIEGO DE CASTRO PIMENTEL
-MATRÍCULA: 202203252496
+#NOME: DIEGO DE CASTRO PIMENTEL
+#MATRÍCULA: 202203252496
 
--------------ATIVIDADE – 5,0 NA AV2-------------
+#-------------ATIVIDADE – 5,0 NA AV2-------------
 1)
 BMa = int(input('Escreva a base maior: \n'))
 BMe = int(input('Escreva a base menor: \n'))
@@ -11,7 +11,7 @@ Area = (BMa + BMe) * Alt / 2
 
 print(f'Resultado= {Area}')
 
--------------
+#-------------
 2) 
 def somaImposto(taxaImposto, custo):
     #cálculo do imposto.
@@ -20,7 +20,7 @@ def somaImposto(taxaImposto, custo):
     return resultado_imposto
 
 somaImposto(10, 45.00)
--------------
+#-------------
 3) 
 Mh = "A.M."
 Td = "P.M."
